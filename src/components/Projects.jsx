@@ -85,7 +85,7 @@ function Projects() {
   return (
     <section className="projects" id="projects">
 
-      <div className="projects-container">
+      <div className="projects-container reveal">
 
         {/* HEADING */}
 

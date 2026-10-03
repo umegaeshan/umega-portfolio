@@ -12,7 +12,7 @@ function Hero() {
   return (
     <section className="hero" id="home">
 
-      <div className="hero-container">
+      <div className="hero-container reveal">
 
         {/* LEFT SIDE */}
         <div className="hero-content">

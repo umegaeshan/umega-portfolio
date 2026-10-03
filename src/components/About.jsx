@@ -11,7 +11,7 @@ function About() {
   return (
     <section className="about" id="about">
 
-      <div className="about-container">
+      <div className="about-container reveal">
 
         {/* SECTION HEADING */}
         <div className="section-heading">

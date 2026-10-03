@@ -14,7 +14,7 @@ function Footer() {
   return (
     <footer className="footer">
 
-      <div className="footer-container">
+      <div className="footer-container reveal">
 
         <a href="#home" className="footer-logo">
           UMEGA<span>.</span>

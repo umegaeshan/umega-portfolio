@@ -135,7 +135,7 @@ function Skills() {
   return (
     <section className="skills" id="skills">
 
-      <div className="skills-container">
+      <div className="about-container reveal">
 
         <div className="section-heading">
           <p>What I Work With</p>

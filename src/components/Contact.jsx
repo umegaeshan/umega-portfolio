@@ -40,7 +40,7 @@ ${message}`
   return (
     <section className="contact" id="contact">
 
-      <div className="contact-container">
+      <div className="contact-container reveal">
 
         {/* HEADING */}
 

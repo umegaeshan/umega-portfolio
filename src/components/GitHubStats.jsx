@@ -13,7 +13,7 @@ function GitHubStats() {
   return (
     <section className="github-section" id="github">
 
-      <div className="github-container">
+      <div className="github-container reveal">
 
         {/* SECTION HEADING */}
 
