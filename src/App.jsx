@@ -4,6 +4,8 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import GitHubStats from "./components/GitHubStats";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -24,11 +26,11 @@ function App() {
 
         <GitHubStats />
 
-        <section id="contact" className="section">
-          <h1>Contact</h1>
-        </section>
+        <Contact />
 
       </main>
+
+      <Footer />
     </>
   );
 }
