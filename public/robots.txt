@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://umegaeshan.vercel.app/sitemap.xml
