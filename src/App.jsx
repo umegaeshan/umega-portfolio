@@ -1,4 +1,6 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+
 import "./App.css";
 
 function App() {
@@ -8,9 +10,7 @@ function App() {
 
       <main>
 
-        <section id="home" className="section home-section">
-          <h1>Home</h1>
-        </section>
+        <Hero />
 
         <section id="about" className="section">
           <h1>About Me</h1>
