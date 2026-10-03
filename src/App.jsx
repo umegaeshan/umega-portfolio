@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 import "./App.css";
 
@@ -11,19 +12,19 @@ function App() {
       <Navbar />
 
       <main>
+
         <Hero />
 
         <About />
 
         <Skills />
 
-        <section id="projects" className="section">
-          <h1>Projects</h1>
-        </section>
+        <Projects />
 
         <section id="contact" className="section">
           <h1>Contact</h1>
         </section>
+
       </main>
     </>
   );
