@@ -1,23 +1,29 @@
+/* =========================================
+   SKILLS SECTION
+========================================= */
+
 .skills {
+  width: 100%;
   min-height: 100vh;
 
   padding: 100px 30px;
 
   background: #0b0f17;
+
+  position: relative;
 }
 
 .skills-container {
   width: 100%;
-
   max-width: 1200px;
 
-  margin: auto;
+  margin: 0 auto;
 }
 
 
-/* ========================
+/* =========================================
    SECTION HEADING
-======================== */
+========================================= */
 
 .skills .section-heading {
   text-align: center;
@@ -29,7 +35,6 @@
   color: #60a5fa;
 
   font-size: 14px;
-
   font-weight: 600;
 
   text-transform: uppercase;
@@ -40,11 +45,10 @@
 }
 
 .skills .section-heading h2 {
-  font-size: 45px;
-
-  font-weight: 800;
-
   color: #f8fafc;
+
+  font-size: 45px;
+  font-weight: 800;
 }
 
 .skills .section-heading h2 span {
@@ -52,9 +56,9 @@
 }
 
 
-/* ========================
-   INTRO TEXT
-======================== */
+/* =========================================
+   INTRO
+========================================= */
 
 .skills-intro {
   max-width: 700px;
@@ -71,11 +75,13 @@
 }
 
 
-/* ========================
+/* =========================================
    SKILLS GRID
-======================== */
+========================================= */
 
 .skills-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(6, 1fr);
@@ -84,14 +90,24 @@
 }
 
 
-/* ========================
+/* =========================================
    SKILL CARD
-======================== */
+========================================= */
 
 .skill-card {
-  min-height: 150px;
+  min-width: 0;
+  min-height: 165px;
 
-  padding: 22px 15px;
+  padding: 22px 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
 
   background: #111827;
 
@@ -99,81 +115,69 @@
 
   border-radius: 14px;
 
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-
   cursor: default;
 
   transition: all 0.3s ease;
 }
 
 .skill-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-7px);
 
   border-color: #3b82f6;
 
   background: #131c2b;
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.25),
+    0 15px 35px rgba(0, 0, 0, 0.3),
     0 0 25px rgba(59, 130, 246, 0.08);
 }
 
 
-/* ========================
-   ICON
-======================== */
+/* =========================================
+   SKILL ICON
+========================================= */
 
 .skill-icon {
-  width: 60px;
-
-  height: 60px;
+  width: 58px;
+  height: 58px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 
   border-radius: 12px;
 
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(59, 130, 246, 0.12);
 
   color: #60a5fa;
 
-  font-size: 34px;
+  font-size: 31px;
 
   transition: 0.3s;
 }
 
 .skill-card:hover .skill-icon {
-  color: #ffffff;
-
   background: #3b82f6;
 
-  transform: scale(1.08);
+  color: white;
+
+  transform: scale(1.07);
 }
 
 
-/* ========================
-   TEXT
-======================== */
+/* =========================================
+   SKILL TEXT
+========================================= */
 
 .skill-info h3 {
   color: #f8fafc;
 
   font-size: 15px;
 
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .skill-info p {
@@ -183,44 +187,452 @@
 }
 
 
-/* ========================
-   TABLET
-======================== */
+/* =========================================
+   CERTIFICATE SKILL
+========================================= */
 
-@media (max-width: 1050px) {
+.certificate-skill {
+  cursor: pointer;
+}
 
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
+.certificate-skill:hover {
+  border-color: #60a5fa;
 }
 
 
-/* ========================
-   SMALL TABLET
-======================== */
+/* =========================================
+   CERTIFICATE BADGE
+========================================= */
 
-@media (max-width: 750px) {
+.certificate-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 12px;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  border: 1px solid rgba(59, 130, 246, 0.2);
+
+  color: #60a5fa;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.certificate-badge svg {
+  font-size: 11px;
+}
+
+
+/* =========================================
+   CERTIFICATE OVERLAY
+========================================= */
+
+.certificate-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(3, 7, 18, 0.82);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  z-index: 9999;
+
+  animation: certificateFadeIn 0.25s ease;
+}
+
+@keyframes certificateFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   CERTIFICATE MODAL
+========================================= */
+
+.certificate-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 720px;
+
+  max-height: 85vh;
+
+  overflow-y: auto;
+
+  padding: 35px;
+
+  background: #111827;
+
+  border: 1px solid #263449;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.55),
+    0 0 50px rgba(59, 130, 246, 0.07);
+
+  animation: certificateModalOpen 0.3s ease;
+}
+
+@keyframes certificateModalOpen {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* Modal scrollbar */
+
+.certificate-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.certificate-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.certificate-modal::-webkit-scrollbar-thumb {
+  background: #334155;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.certificate-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #263449;
+
+  border-radius: 50%;
+
+  background: #0b0f17;
+
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.certificate-close:hover {
+  color: white;
+
+  background: #3b82f6;
+
+  border-color: #3b82f6;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================
+   MODAL HEADING
+========================================= */
+
+.certificate-modal-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding-right: 55px;
+
+  margin-bottom: 15px;
+}
+
+.certificate-main-icon {
+  width: 58px;
+  height: 58px;
+
+  min-width: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+
+  color: #60a5fa;
+
+  border-radius: 13px;
+
+  font-size: 28px;
+}
+
+.certificate-modal-heading span {
+  color: #60a5fa;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+.certificate-modal-heading h2 {
+  color: #f8fafc;
+
+  font-size: 28px;
+
+  margin-top: 3px;
+}
+
+.certificate-modal-description {
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin-bottom: 28px;
+}
+
+
+/* =========================================
+   CERTIFICATE LIST
+========================================= */
+
+.certificate-list {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================
+   CERTIFICATE ITEM
+========================================= */
+
+.certificate-item {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  background: #0b0f17;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 13px;
+
+  transition: 0.3s;
+}
+
+.certificate-item:hover {
+  border-color: rgba(59, 130, 246, 0.7);
+
+  background: #0e1522;
+}
+
+
+/* Certificate icon */
+
+.certificate-item-icon {
+  width: 46px;
+  height: 46px;
+
+  min-width: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(59, 130, 246, 0.1);
+
+  border-radius: 10px;
+
+  color: #60a5fa;
+
+  font-size: 19px;
+}
+
+
+/* Certificate information */
+
+.certificate-item-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.certificate-item-info span {
+  color: #60a5fa;
+
+  font-size: 11px;
+}
+
+.certificate-item-info h3 {
+  color: #f8fafc;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================
+   VIEW CERTIFICATE BUTTON
+========================================= */
+
+.certificate-item a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  background: #3b82f6;
+
+  border-radius: 8px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: 0.3s;
+}
+
+.certificate-item a:hover {
+  background: #2563eb;
+
+  transform: translateY(-2px);
+}
+
+.certificate-item a svg {
+  font-size: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE - LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .skills {
+    padding: 90px 25px;
+  }
 
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .skills .section-heading h2 {
+    font-size: 40px;
+  }
 }
 
 
-/* ========================
-   MOBILE
-======================== */
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
 
-@media (max-width: 500px) {
-
+@media (max-width: 600px) {
   .skills {
-    padding: 80px 20px;
+    padding: 80px 18px;
   }
 
   .skills .section-heading h2 {
-    font-size: 35px;
+    font-size: 34px;
+  }
+
+  .skills-intro {
+    font-size: 13px;
+
+    margin-bottom: 35px;
   }
 
   .skills-grid {
@@ -230,21 +642,83 @@
   }
 
   .skill-card {
-    min-height: 135px;
+    min-height: 150px;
 
-    padding: 18px 10px;
+    padding: 18px 8px;
   }
 
   .skill-icon {
-    width: 52px;
+    width: 50px;
+    height: 50px;
 
-    height: 52px;
-
-    font-size: 29px;
+    font-size: 27px;
   }
 
   .skill-info h3 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
+  .certificate-badge {
+    font-size: 9px;
+
+    padding: 4px 7px;
+  }
+
+
+  /* Modal */
+
+  .certificate-overlay {
+    padding: 15px;
+  }
+
+  .certificate-modal {
+    padding: 25px 18px;
+
+    border-radius: 16px;
+  }
+
+  .certificate-close {
+    width: 35px;
+    height: 35px;
+
+    top: 14px;
+    right: 14px;
+  }
+
+  .certificate-modal-heading {
+    padding-right: 40px;
+  }
+
+  .certificate-main-icon {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+
+    font-size: 23px;
+  }
+
+  .certificate-modal-heading h2 {
+    font-size: 21px;
+  }
+
+  .certificate-item {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 18px;
+  }
+
+  .certificate-item-info {
+    width: 100%;
+  }
+
+  .certificate-item a {
+    width: 100%;
+
+    padding: 11px;
+  }
 }
