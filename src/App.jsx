@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import GitHubStats from "./components/GitHubStats";
 
 import "./App.css";
 
@@ -20,6 +21,8 @@ function App() {
         <Skills />
 
         <Projects />
+
+        <GitHubStats />
 
         <section id="contact" className="section">
           <h1>Contact</h1>
