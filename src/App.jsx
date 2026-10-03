@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import About from "./components/About";
 
 import "./App.css";
 
@@ -12,9 +13,7 @@ function App() {
 
         <Hero />
 
-        <section id="about" className="section">
-          <h1>About Me</h1>
-        </section>
+        <About />
 
         <section id="skills" className="section">
           <h1>Skills</h1>
