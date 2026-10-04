@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://umegaeshan.vercel.app/sitemap.xml
+Sitemap: https://umega-portfolio.vercel.app/sitemap.xml
