@@ -1,207 +1,119 @@
 import "./Projects.css";
-
-import {
-  FaGithub,
-  FaExternalLinkAlt,
-  FaAndroid,
-  FaNetworkWired,
-  FaBook,
-  FaPlane,
-  FaTasks,
-  FaUserLock,
-} from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 function Projects() {
-
   const projects = [
     {
+      id: 1,
       title: "UniMate",
-      description:
-        "An Android application developed to provide useful features for university students and improve the student experience.",
-      technologies: ["Java", "XML", "Firebase", "Android Studio"],
-      icon: <FaAndroid />,
-      category: "Mobile Application",
-      github:
-        "https://github.com/umegaeshan/UniMate-using-javaP",
+      description: "A student to-do and productivity mobile application built using Java.",
+      image: "/projects/unimate.jpg",
+      tech: ["Java", "Android Studio", "XML"],
+      github: "https://github.com/umegaeshan",
+      live: "#",
     },
 
     {
+      id: 2,
       title: "Advanced Login Page",
-      description:
-        "A login and registration system with form validation, authentication and database integration.",
-      technologies: ["PHP", "MySQL", "HTML", "CSS"],
-      icon: <FaUserLock />,
-      category: "Web Development",
-      github:
-        "https://github.com/umegaeshan/Adavnces-login-page-with-validations",
+      description: "A login and registration system with validations using PHP.",
+      image: "/projects/advanced-login.jpg",
+      tech: ["PHP", "HTML", "CSS", "MySQL"],
+      github: "https://github.com/umegaeshan",
+      live: "#",
     },
 
     {
-      title: "Enterprise Network Architecture",
-      description:
-        "A network architecture project designed using routing, VLANs, security configurations and network infrastructure concepts.",
-      technologies: ["Cisco", "VLAN", "ACL", "Networking"],
-      icon: <FaNetworkWired />,
-      category: "Networking",
-      github:
-        "https://github.com/umegaeshan/Enterprise-Network-Architecture-VicHotel",
+      id: 3,
+      title: "Portfolio Website",
+      description: "A modern personal portfolio website showcasing my skills and projects.",
+      image: "/projects/portfolio.jpg",
+      tech: ["React", "Vite", "CSS"],
+      github: "https://github.com/umegaeshan/umega-portfolio",
+      live: "https://umega-portfolio.vercel.app/",
     },
 
     {
-      title: "Sarasavi Library Management System",
-      description:
-        "A library management system created to manage books, users and common library operations.",
-      technologies: ["C#", "Database", "Desktop App"],
-      icon: <FaBook />,
-      category: "Software Development",
-      github:
-        "https://github.com/umegaeshan/Sarasavi-Library-Management-System",
+      id: 4,
+      title: "GoviMart",
+      description: "A web marketplace platform for farmers and resellers.",
+      image: "/projects/govimart.jpg",
+      tech: ["React", "Tailwind CSS", "JavaScript"],
+      github: "https://github.com/umegaeshan",
+      live: "#",
     },
 
     {
-      title: "CeyloTrip",
-      description:
-        "A travel related application project created to practice application development and software design concepts.",
-      technologies: ["Java", "UI Design", "Application"],
-      icon: <FaPlane />,
-      category: "Application Development",
-      github:
-        "https://github.com/umegaeshan/CeyloTrip",
-    },
-
-    {
-      title: "MyToDoApp",
-      description:
-        "A simple task management application for creating and organizing daily tasks.",
-      technologies: ["Java", "Mobile", "Task Management"],
-      icon: <FaTasks />,
-      category: "Mobile Application",
-      github:
-        "https://github.com/umegaeshan/MyToDoApp",
+      id: 5,
+      title: "Flower Ordering System",
+      description: "A flower ordering web application built using React and Firebase.",
+      image: "/projects/flower-ordering.jpg",
+      tech: ["React", "Firebase", "CSS"],
+      github: "https://github.com/umegaeshan",
+      live: "#",
     },
   ];
 
-
   return (
     <section className="projects" id="projects">
-
-      <div className="projects-container reveal">
-
-        {/* HEADING */}
-
+      <div className="projects-container">
         <div className="section-heading">
-
-          <p>Things I've Built</p>
-
+          <p>My Recent Work</p>
           <h2>
-            My <span>Projects</span>
+            Featured <span>Projects</span>
           </h2>
-
         </div>
-
 
         <p className="projects-intro">
-          A selection of projects I've worked on while learning
-          web development, mobile development, networking and
-          software technologies.
+          Here are some of the projects I have worked on while learning and building
+          my skills in web development, mobile application development and software solutions.
         </p>
 
-
-        {/* PROJECT GRID */}
-
         <div className="projects-grid">
+          {projects.map((project) => (
+            <div className="project-card" key={project.id}>
+              <div className="project-image-wrapper">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                />
 
-          {projects.map((project, index) => (
+                <div className="project-overlay">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-btn"
+                  >
+                    <FaGithub /> Code
+                  </a>
 
-            <div className="project-card" key={index}>
-
-              {/* TOP */}
-
-              <div className="project-top">
-
-                <div className="project-icon">
-                  {project.icon}
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-btn"
+                  >
+                    <FaExternalLinkAlt /> Live
+                  </a>
                 </div>
-
-                <span className="project-category">
-                  {project.category}
-                </span>
-
               </div>
 
+              <div className="project-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
 
-              {/* PROJECT INFO */}
-
-              <h3 className="project-title">
-                {project.title}
-              </h3>
-
-              <p className="project-description">
-                {project.description}
-              </p>
-
-
-              {/* TECHNOLOGIES */}
-
-              <div className="project-technologies">
-
-                {project.technologies.map((technology, techIndex) => (
-
-                  <span key={techIndex}>
-                    {technology}
-                  </span>
-
-                ))}
-
+                <div className="project-tech">
+                  {project.tech.map((item, index) => (
+                    <span key={index}>{item}</span>
+                  ))}
+                </div>
               </div>
-
-
-              {/* BUTTON */}
-
-              <div className="project-buttons">
-
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="github-project-btn"
-                >
-                  <FaGithub />
-
-                  View Code
-                </a>
-
-              </div>
-
             </div>
-
           ))}
-
         </div>
-
-
-        {/* MORE PROJECTS */}
-
-        <div className="more-projects">
-
-          <p>
-            Want to see more of my work?
-          </p>
-
-          <a
-            href="https://github.com/umegaeshan"
-            target="_blank"
-            rel="noreferrer"
-          >
-            View My GitHub
-
-            <FaExternalLinkAlt />
-          </a>
-
-        </div>
-
       </div>
-
     </section>
   );
 }
