@@ -358,49 +358,190 @@
 ========================= */
 
 @media (max-width: 600px) {
-
   .hero {
-    padding-left: 20px;
-    padding-right: 20px;
+    min-height: auto;
+    padding: 95px 18px 55px;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* ======================
+     TEXT AREA
+  ====================== */
+
+  .hero-content {
+    order: 1;
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-small-text {
+    font-size: 14px;
+    margin-bottom: 8px;
   }
 
   .hero-name {
-    font-size: 52px;
+    font-size: clamp(42px, 13vw, 54px);
+    line-height: 1;
+    margin-bottom: 16px;
   }
 
   .hero-title {
-    font-size: 24px;
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 5px;
   }
 
   .hero-subtitle {
-    font-size: 17px;
+    font-size: 15px;
+    margin-bottom: 18px;
   }
 
   .hero-description {
-    font-size: 14px;
+    max-width: 100%;
+    font-size: 13.5px;
+    line-height: 1.75;
+    margin-bottom: 24px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
+  /* ======================
+     BUTTONS
+  ====================== */
 
+  .hero-buttons {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 22px;
   }
 
   .primary-btn,
   .secondary-btn {
     width: 100%;
+    padding: 12px 8px;
+    font-size: 13px;
   }
 
+  /* ======================
+     SOCIAL LINKS
+  ====================== */
+
+  .hero-socials {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .hero-socials a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* ======================
+     PROFILE IMAGE
+  ====================== */
+
   .hero-image-area {
-    min-height: 430px;
+    order: 2;
+
+    width: 100%;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5px;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+
+    width: min(100%, 335px);
+    height: 395px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(96, 165, 250, 0.2);
+
+    background:
+      radial-gradient(
+        circle at 50% 35%,
+        rgba(59, 130, 246, 0.2),
+        rgba(15, 23, 42, 0.08) 65%
+      );
+
+    box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.3),
+      inset 0 0 40px rgba(59, 130, 246, 0.04);
   }
 
   .hero-image {
-    max-width: 330px;
+    width: 115%;
+    max-width: none;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    transform: translateY(-5px) scale(1.03) !important;
+    transform-origin: top center;
+
+    filter: drop-shadow(
+      0 20px 25px rgba(0, 0, 0, 0.35)
+    );
+  }
+
+  .hero-glow {
+    width: 250px;
+    height: 250px;
+
+    opacity: 0.18;
+
+    filter: blur(90px);
   }
 
   .scroll-down {
     display: none;
   }
+}
 
+
+@media (max-width: 390px) {
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-name {
+    font-size: 42px;
+  }
+
+  .hero-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image-wrapper {
+    width: 300px;
+    height: 370px;
+  }
+
+  .hero-image {
+    width: 112%;
+  }
 }
