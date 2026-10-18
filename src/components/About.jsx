@@ -53,41 +53,41 @@ function About() {
 
 
             {/* EDUCATION CARD */}
-           <div className="education-card">
+            <div className="education-card">
 
-  <div className="education-icon">
-    <FaGraduationCap />
-  </div>
+              <div className="education-icon">
+                <FaGraduationCap />
+              </div>
 
-  <div className="education-details">
+              <div className="education-details">
 
-    <div className="education-top">
+                <div className="education-top">
 
-      <span className="education-label">
-        Education
-      </span>
+                  <span className="education-label">
+                    Education
+                  </span>
 
-      <span className="education-status">
-        Undergraduate
-      </span>
+                  <span className="education-status">
+                    Undergraduate
+                  </span>
 
-    </div>
+                </div>
 
-    <h4>
-      Bachelor of Information and Communication Technology
-    </h4>
+                <h4>
+                  Bachelor of Information and Communication Technology
+                </h4>
 
-    <p className="education-faculty">
-      Faculty of Technology
-    </p>
+                <p className="education-faculty">
+                  Faculty of Technology
+                </p>
 
-    <p className="education-university">
-      University of Colombo
-    </p>
+                <p className="education-university">
+                  University of Colombo
+                </p>
 
-  </div>
+              </div>
 
-</div>
+            </div>
 
           </div>
 

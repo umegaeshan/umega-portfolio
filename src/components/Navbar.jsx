@@ -1,148 +1,71 @@
-import { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-
+import { useState } from "react";
 import "./Navbar.css";
+import { FaBars, FaTimes, FaDownload } from "react-icons/fa";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const [activeSection, setActiveSection] = useState("home");
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-
-    const handleScroll = () => {
-      let currentSection = "home";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150;
-
-        if (window.scrollY >= sectionTop) {
-          currentSection = section.getAttribute("id");
-        }
-      });
-
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <nav className="navbar">
-
       <div className="navbar-container">
-
-        <a
-          href="#home"
-          className="logo"
-          onClick={closeMenu}
-        >
+        {/* LOGO */}
+        <a href="#home" className="logo" onClick={closeMenu}>
           UMEGA<span>.</span>
         </a>
 
+        {/* NAV LINKS */}
+        <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <a href="#home" onClick={closeMenu}>
+            Home
+          </a>
 
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <a href="#about" onClick={closeMenu}>
+            About
+          </a>
 
-          <li>
-            <a
-              href="#home"
-              onClick={closeMenu}
-              className={activeSection === "home" ? "active-link" : ""}
-            >
-              Home
-            </a>
-          </li>
+          <a href="#skills" onClick={closeMenu}>
+            Skills
+          </a>
 
+          <a href="#projects" onClick={closeMenu}>
+            Projects
+          </a>
 
-          <li>
-            <a
-              href="#about"
-              onClick={closeMenu}
-              className={activeSection === "about" ? "active-link" : ""}
-            >
-              About
-            </a>
-          </li>
+          <a href="#github" onClick={closeMenu}>
+            GitHub
+          </a>
 
+          <a href="#contact" onClick={closeMenu}>
+            Contact
+          </a>
 
-          <li>
-            <a
-              href="#skills"
-              onClick={closeMenu}
-              className={activeSection === "skills" ? "active-link" : ""}
-            >
-              Skills
-            </a>
-          </li>
+          {/* MOBILE CV BUTTON */}
+          <a
+            href="/cv/Umega_Eshan_CV.pdf"
+            download="Umega_Eshan_CV.pdf"
+            className="mobile-cv-btn"
+            onClick={closeMenu}
+          >
+            <FaDownload />
+            Download CV
+          </a>
+        </div>
 
-
-          <li>
-            <a
-              href="#projects"
-              onClick={closeMenu}
-              className={activeSection === "projects" ? "active-link" : ""}
-            >
-              Projects
-            </a>
-          </li>
-
-
-          <li>
-            <a
-              href="#github"
-              onClick={closeMenu}
-              className={activeSection === "github" ? "active-link" : ""}
-            >
-              GitHub
-            </a>
-          </li>
-
-
-          <li>
-            <a
-              href="#contact"
-              onClick={closeMenu}
-              className={activeSection === "contact" ? "active-link" : ""}
-            >
-              Contact
-            </a>
-          </li>
-
-
-          <li className="mobile-talk-item">
-
-            <a
-              href="#contact"
-              className="mobile-talk-button"
-              onClick={closeMenu}
-            >
-              Let's Talk
-            </a>
-
-          </li>
-
-        </ul>
-
-
+        {/* DESKTOP CV BUTTON */}
         <a
-          href="#contact"
-          className="nav-button"
+          href="/cv/Umega_Eshan_CV.pdf"
+          download="Umega_Eshan_CV.pdf"
+          className="navbar-cv-btn"
         >
-          Let's Talk
+          <FaDownload />
+          Download CV
         </a>
 
-
+        {/* MOBILE MENU BUTTON */}
         <button
           className="menu-button"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -150,9 +73,7 @@ function Navbar() {
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
-
       </div>
-
     </nav>
   );
 }
