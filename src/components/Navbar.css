@@ -4,19 +4,29 @@
 
 .navbar {
   position: fixed;
+
   top: 0;
   left: 0;
+
   z-index: 1000;
 
   width: 100%;
   height: 84px;
 
-  background: rgba(11, 15, 23, 0.9);
-  border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+  background:
+    rgba(11, 15, 23, 0.92);
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  border-bottom:
+    1px solid
+    rgba(30, 41, 59, 0.8);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
 }
+
 
 /* =====================================================
    CONTAINER
@@ -25,17 +35,27 @@
 .navbar-container {
   width: 100%;
   max-width: 1280px;
+
   height: 100%;
 
-  margin: 0 auto;
-  padding: 0 32px;
+  margin:
+    0 auto;
+
+  padding:
+    0 32px;
 
   display: grid;
-  grid-template-columns: 190px 1fr 190px;
+
+  grid-template-columns:
+    210px
+    1fr
+    210px;
+
   align-items: center;
 
   box-sizing: border-box;
 }
+
 
 /* =====================================================
    LOGO
@@ -44,24 +64,43 @@
 .logo {
   justify-self: start;
 
-  color: #f8fafc;
-  text-decoration: none;
+  color:
+    #f8fafc;
 
-  font-size: 29px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  line-height: 1;
+  text-decoration:
+    none;
 
-  transition: 0.3s ease;
+  font-size:
+    29px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    1px;
+
+  line-height:
+    1;
+
+  transition:
+    0.3s ease;
 }
 
-.logo:hover {
-  color: #ffffff;
-}
 
 .logo span {
-  color: #3b82f6;
+  color:
+    #3b82f6;
 }
+
+
+.logo:hover {
+  color:
+    #ffffff;
+
+  transform:
+    translateY(-1px);
+}
+
 
 /* =====================================================
    NAV LINKS
@@ -71,271 +110,1026 @@
   justify-self: center;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 34px;
 }
 
-.nav-links a {
+
+.nav-links > a {
   position: relative;
 
-  color: #cbd5e1;
-  text-decoration: none;
+  color:
+    #cbd5e1;
 
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1;
+  text-decoration:
+    none;
 
-  transition: color 0.3s ease;
+  font-size:
+    16px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1;
+
+  white-space:
+    nowrap;
+
+  transition:
+    color 0.3s ease;
 }
 
-.nav-links a::after {
+
+.nav-links > a::after {
   content: "";
+
   position: absolute;
+
   left: 0;
   bottom: -9px;
 
   width: 0;
   height: 2px;
 
-  border-radius: 20px;
-  background: #3b82f6;
+  border-radius:
+    10px;
 
-  transition: width 0.3s ease;
+  background:
+    #3b82f6;
+
+  transition:
+    width 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #ffffff;
+
+.nav-links > a:hover {
+  color:
+    #ffffff;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+
+.nav-links > a:hover::after {
+  width:
+    100%;
 }
+
 
 /* =====================================================
-   DESKTOP CV BUTTON
+   DESKTOP CV DROPDOWN
+===================================================== */
+
+.cv-dropdown {
+  position: relative;
+
+  justify-self: end;
+
+  /*
+    Invisible bridge area keeps
+    dropdown open while mouse moves down
+  */
+
+  padding-bottom:
+    8px;
+
+  margin-bottom:
+    -8px;
+}
+
+
+/* =====================================================
+   MAIN DOWNLOAD BUTTON
 ===================================================== */
 
 .navbar-cv-btn {
-  justify-self: end;
+  min-height:
+    46px;
 
-  min-height: 46px;
-  padding: 11px 18px;
+  padding:
+    11px 17px;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
+  display:
+    inline-flex;
 
-  border: 1px solid #3b82f6;
-  border-radius: 10px;
+  align-items:
+    center;
 
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: #ffffff;
-  text-decoration: none;
+  justify-content:
+    center;
 
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
+  gap:
+    8px;
 
-  box-shadow: 0 10px 28px rgba(59, 130, 246, 0.18);
+  border:
+    1px solid
+    #3b82f6;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
+  border-radius:
+    10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #2563eb
+    );
+
+  color:
+    #ffffff;
+
+  text-decoration:
+    none;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+
+  box-shadow:
+    0 10px 28px
+    rgba(59, 130, 246, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
     background 0.3s ease;
 }
 
-.navbar-cv-btn svg {
-  font-size: 13px;
-}
 
 .navbar-cv-btn:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  box-shadow: 0 14px 30px rgba(59, 130, 246, 0.28);
+  transform:
+    translateY(-2px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d4ed8
+    );
+
+  box-shadow:
+    0 14px 35px
+    rgba(59, 130, 246, 0.3);
 }
 
+
+.navbar-cv-btn > svg:first-child {
+  font-size:
+    13px;
+}
+
+
+/* CHEVRON */
+
+.cv-chevron {
+  margin-left:
+    2px;
+
+  font-size:
+    9px;
+
+  opacity:
+    0.85;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.cv-dropdown:hover
+.cv-chevron,
+.cv-dropdown:focus-within
+.cv-chevron {
+  transform:
+    rotate(180deg);
+}
+
+
 /* =====================================================
-   MOBILE ONLY
+   DROPDOWN MENU
 ===================================================== */
 
-.mobile-cv-btn {
-  display: none !important;
+.cv-dropdown-menu {
+  position: absolute;
+
+  top:
+    calc(100% + 10px);
+
+  right: 0;
+
+  width:
+    330px;
+
+  padding:
+    12px;
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.18);
+
+  border-radius:
+    16px;
+
+  background:
+    rgba(10, 16, 28, 0.98);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 25px 65px
+    rgba(0, 0, 0, 0.45),
+    0 0 35px
+    rgba(59, 130, 246, 0.05);
+
+  opacity:
+    0;
+
+  visibility:
+    hidden;
+
+  pointer-events:
+    none;
+
+  transform:
+    translateY(-10px)
+    scale(0.97);
+
+  transform-origin:
+    top right;
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
 }
 
-.menu-button {
-  display: none;
 
-  border: none;
-  outline: none;
-  background: transparent;
+/* invisible hover bridge */
 
-  color: #f8fafc;
-  font-size: 26px;
-  cursor: pointer;
+.cv-dropdown-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: -14px;
+  left: 0;
+
+  width: 100%;
+  height: 16px;
 }
+
+
+/* SHOW DROPDOWN */
+
+.cv-dropdown:hover
+.cv-dropdown-menu,
+.cv-dropdown:focus-within
+.cv-dropdown-menu {
+  opacity:
+    1;
+
+  visibility:
+    visible;
+
+  pointer-events:
+    auto;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
 
 /* =====================================================
-   LARGE TABLET
+   DROPDOWN HEADER
+===================================================== */
+
+.cv-dropdown-header {
+  padding:
+    8px 9px
+    12px;
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.1);
+}
+
+
+.cv-dropdown-header span {
+  display: block;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.cv-dropdown-header p {
+  margin:
+    5px 0 0;
+
+  color:
+    #64748b;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =====================================================
+   DROPDOWN ITEM
+===================================================== */
+
+.cv-dropdown-item {
+  width:
+    100%;
+
+  margin-top:
+    8px;
+
+  padding:
+    12px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    42px
+    1fr
+    20px;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius:
+    11px;
+
+  text-decoration:
+    none;
+
+  background:
+    transparent;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.cv-dropdown-item:hover {
+  background:
+    rgba(59, 130, 246, 0.08);
+
+  border-color:
+    rgba(96, 165, 250, 0.17);
+
+  transform:
+    translateX(2px);
+}
+
+
+/* ICON */
+
+.cv-dropdown-icon {
+  width:
+    42px;
+
+  height:
+    42px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(59, 130, 246, 0.1);
+
+  border:
+    1px solid
+    rgba(59, 130, 246, 0.16);
+
+  color:
+    #60a5fa;
+
+  font-size:
+    17px;
+}
+
+
+/* INFO */
+
+.cv-dropdown-info {
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    4px;
+}
+
+
+.cv-dropdown-info strong {
+  color:
+    #f8fafc;
+
+  font-size:
+    13px;
+
+  font-weight:
+    600;
+}
+
+
+.cv-dropdown-info span {
+  color:
+    #64748b;
+
+  font-size:
+    10px;
+
+  line-height:
+    1.4;
+}
+
+
+/* DOWNLOAD ICON */
+
+.cv-item-download {
+  color:
+    #64748b;
+
+  font-size:
+    12px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.cv-dropdown-item:hover
+.cv-item-download {
+  color:
+    #60a5fa;
+
+  transform:
+    translateY(2px);
+}
+
+
+/* =====================================================
+   DROPDOWN NOTE
+===================================================== */
+
+.cv-dropdown-note {
+  margin-top:
+    10px;
+
+  padding:
+    10px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  border-top:
+    1px solid
+    rgba(148, 163, 184, 0.08);
+
+  color:
+    #64748b;
+
+  font-size:
+    9px;
+
+  line-height:
+    1.4;
+}
+
+
+.cv-dropdown-note svg {
+  flex-shrink:
+    0;
+
+  color:
+    #60a5fa;
+}
+
+
+/* =====================================================
+   MOBILE CV AREA
+===================================================== */
+
+.mobile-cv-area {
+  display:
+    none;
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.menu-button {
+  display:
+    none;
+
+  border:
+    none;
+
+  outline:
+    none;
+
+  background:
+    transparent;
+
+  color:
+    #f8fafc;
+
+  font-size:
+    26px;
+
+  cursor:
+    pointer;
+}
+
+
+/* =====================================================
+   SMALL DESKTOP / TABLET
 ===================================================== */
 
 @media (max-width: 1100px) {
+
   .navbar-container {
-    grid-template-columns: 170px 1fr 170px;
-    padding: 0 24px;
+    grid-template-columns:
+      180px
+      1fr
+      180px;
+
+    padding:
+      0 24px;
   }
+
 
   .nav-links {
-    gap: 24px;
+    gap:
+      22px;
   }
 
-  .nav-links a {
-    font-size: 15px;
+
+  .nav-links > a {
+    font-size:
+      14px;
   }
 
-  .logo {
-    font-size: 26px;
-  }
-
-  .navbar-cv-btn {
-    font-size: 13px;
-    padding: 10px 14px;
-  }
-}
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 900px) {
-  .navbar-container {
-    grid-template-columns: 150px 1fr 150px;
-  }
-
-  .nav-links {
-    gap: 18px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
 
   .logo {
-    font-size: 24px;
+    font-size:
+      26px;
   }
 
+
   .navbar-cv-btn {
-    font-size: 12px;
-    padding: 10px 12px;
+    padding:
+      10px 13px;
+
+    font-size:
+      11px;
   }
+
 }
+
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
+
   .navbar {
-    height: 72px;
+    height:
+      72px;
   }
+
 
   .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 18px;
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      space-between;
+
+    padding:
+      0 18px;
   }
+
 
   .logo {
-    font-size: 24px;
-    z-index: 1100;
+    position:
+      relative;
+
+    z-index:
+      1200;
+
+    font-size:
+      23px;
   }
 
-  .navbar-cv-btn {
-    display: none;
+
+  /* desktop dropdown hide */
+
+  .cv-dropdown {
+    display:
+      none;
   }
+
+
+  /* hamburger */
 
   .menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1100;
+    position:
+      relative;
+
+    z-index:
+      1200;
+
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
   }
+
+
+  /* =================================================
+     MOBILE MENU
+  ================================================= */
 
   .nav-links {
-    position: fixed;
-    top: 72px;
-    left: 0;
+    position:
+      fixed;
 
-    width: 100%;
-    height: calc(100vh - 72px);
+    top:
+      72px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
+    left:
+      0;
 
-    background: rgba(8, 12, 19, 0.98);
+    width:
+      100%;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    height:
+      calc(100dvh - 72px);
 
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    margin:
+      0;
 
-    transition: transform 0.35s ease, opacity 0.35s ease,
+    padding:
+      35px
+      24px;
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      center;
+
+    justify-content:
+      flex-start;
+
+    gap:
+      23px;
+
+    overflow-y:
+      auto;
+
+    background:
+      rgba(7, 11, 19, 0.985);
+
+    backdrop-filter:
+      blur(20px);
+
+    -webkit-backdrop-filter:
+      blur(20px);
+
+    transform:
+      translateX(100%);
+
+    opacity:
+      0;
+
+    visibility:
+      hidden;
+
+    pointer-events:
+      none;
+
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease,
       visibility 0.35s ease;
+
+    box-sizing:
+      border-box;
   }
+
 
   .nav-links.active {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    transform:
+      translateX(0);
+
+    opacity:
+      1;
+
+    visibility:
+      visible;
+
+    pointer-events:
+      auto;
   }
 
-  .nav-links a {
-    font-size: 20px;
-    font-weight: 600;
+
+  .nav-links > a {
+    font-size:
+      19px;
+
+    font-weight:
+      600;
   }
 
-  .mobile-cv-btn {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
 
-    margin-top: 10px;
-    padding: 13px 22px !important;
+  /* =================================================
+     MOBILE CV AREA
+  ================================================= */
 
-    border: 1px solid #3b82f6;
-    border-radius: 10px;
+  .mobile-cv-area {
+    width:
+      100%;
 
-    background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
-    color: #ffffff !important;
-    text-decoration: none;
+    max-width:
+      360px;
 
-    font-size: 14px;
-    font-weight: 700;
+    margin-top:
+      8px;
+
+    padding-top:
+      22px;
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    gap:
+      9px;
+
+    border-top:
+      1px solid
+      rgba(148, 163, 184, 0.1);
   }
 
-  .mobile-cv-btn::after {
-    display: none;
+
+  .mobile-cv-title {
+    margin:
+      0
+      0
+      4px;
+
+    color:
+      #64748b;
+
+    font-size:
+      10px;
+
+    font-weight:
+      700;
+
+    text-align:
+      center;
+
+    letter-spacing:
+      1.4px;
+
+    text-transform:
+      uppercase;
   }
+
+
+  .mobile-cv-option {
+    width:
+      100%;
+
+    min-height:
+      55px;
+
+    padding:
+      10px 12px;
+
+    display:
+      grid !important;
+
+    grid-template-columns:
+      35px
+      1fr
+      20px;
+
+    align-items:
+      center;
+
+    gap:
+      10px;
+
+    border:
+      1px solid
+      rgba(96, 165, 250, 0.15);
+
+    border-radius:
+      11px;
+
+    background:
+      rgba(15, 23, 42, 0.65);
+
+    color:
+      #ffffff !important;
+
+    text-decoration:
+      none;
+
+    text-align:
+      left;
+
+    box-sizing:
+      border-box;
+  }
+
+
+  .mobile-cv-option::after {
+    display:
+      none !important;
+  }
+
+
+  .mobile-cv-option > svg:first-child {
+    color:
+      #60a5fa;
+
+    font-size:
+      16px;
+  }
+
+
+  .mobile-cv-option > svg:last-child {
+    justify-self:
+      end;
+
+    color:
+      #64748b;
+
+    font-size:
+      11px;
+  }
+
+
+  .mobile-cv-option div {
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    gap:
+      3px;
+  }
+
+
+  .mobile-cv-option strong {
+    color:
+      #f8fafc;
+
+    font-size:
+      12px;
+
+    font-weight:
+      600;
+  }
+
+
+  .mobile-cv-option span {
+    color:
+      #64748b;
+
+    font-size:
+      9px;
+  }
+
+
+  .mobile-common-cv {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.17),
+        rgba(37, 99, 235, 0.08)
+      );
+
+    border-color:
+      rgba(59, 130, 246, 0.38);
+  }
+
 }
 
+
 /* =====================================================
-   SMALL MOBILE
+   SMALL PHONE
 ===================================================== */
 
-@media (max-width: 420px) {
-  .logo {
-    font-size: 22px;
+@media (max-width: 390px) {
+
+  .navbar-container {
+    padding:
+      0 15px;
   }
 
-  .nav-links a {
-    font-size: 19px;
+
+  .logo {
+    font-size:
+      21px;
   }
+
+
+  .nav-links {
+    gap:
+      20px;
+
+    padding-top:
+      28px;
+  }
+
+
+  .nav-links > a {
+    font-size:
+      18px;
+  }
+
 }
